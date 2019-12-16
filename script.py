@@ -1,5 +1,3 @@
-# import random number generator
-from random import randrange
 # import heap class
 from min_heap import MinHeap 
 
@@ -10,20 +8,6 @@ min_heap = MinHeap()
 min_heap.heap_list = [None, 10, 13, 21, 61, 22, 23, 99]
 min_heap.count = 7
 
-print("The smaller child of index 1 is: ")
-smaller_child_of_idx_1 = min_heap.get_smaller_child_idx(1)
-print(smaller_child_of_idx_1)
-smaller_child_element = min_heap.heap_list[smaller_child_of_idx_1]
-print(smaller_child_element)
-
-print("The smaller child of index 2 is: ")
-smaller_child_of_idx_2 = min_heap.get_smaller_child_idx(2)
-print(smaller_child_of_idx_2)
-smaller_child_element = min_heap.heap_list[smaller_child_of_idx_2]
-print(smaller_child_element)
-
-print("The smaller child of index 3 is: ")
-smaller_child_of_idx_3 = min_heap.get_smaller_child_idx(3)
-print(smaller_child_of_idx_3)
-smaller_child_element = min_heap.heap_list[smaller_child_of_idx_3]
-print(smaller_child_element)
+while len(min_heap.heap_list) != 1:
+  print(min_heap.heap_list)
+  min_heap.retrieve_min()
