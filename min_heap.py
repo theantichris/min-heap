@@ -11,6 +11,16 @@ class MinHeap:
 
     def heapify_up(self):
         print("Restoring the heap property...")
+        idx = self.count
+        while self.parent_idx(idx) > 0:
+            child = self.heap_list[idx]
+            parent = self.heap_list[self.parent_idx(idx)]
+            if parent > child:
+                print("swapping {} with {}".format(parent, child))
+                self.heap_list[idx] = parent
+                self.heap_list[self.parent_idx(idx)] = child
+            idx = self.parent_idx(idx)
+        print("Heap Restored {}".format(self.heap_list))
 
     def parent_idx(self, idx):
         return idx // 2
