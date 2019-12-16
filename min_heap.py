@@ -7,3 +7,7 @@ class MinHeap:
         print("Adding {} to {}.".format(element, self.heap_list))
         self.count += 1
         self.heap_list.append(element)
+        self.heapify_up()
+
+    def heapify_up(self):
+        print("Restoring the heap property...")
