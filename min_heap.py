@@ -22,6 +22,17 @@ class MinHeap:
             idx = self.parent_idx(idx)
         print("Heap Restored {}".format(self.heap_list))
 
+    def retrieve_min(self):
+        if self.count == 0:
+            print("The heap is empty.")
+            return None
+        min = self.heap_list[1]
+        print("Removing {} from {}".format(min, self.heap_list))
+        self.heap_list[1] = self.heap_list.pop(self.count)
+        self.count -= 1
+        print("Last element moved to first: {}".format(self.heap_list))
+        return min
+
     def parent_idx(self, idx):
         return idx // 2
 
